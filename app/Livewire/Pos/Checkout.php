@@ -48,16 +48,21 @@ class Checkout extends Component
         ]);
     }
 
+
+    public function calculateTotal() {
+        // dd(Cart::instance($this->cart_instance)->total());
+        return Cart::instance($this->cart_instance)->total() + $this->shipping;
+    }
+
     public function proceed() {
         if ($this->customer_id != null) {
             $this->dispatch('showCheckoutModal');
+            $this->total_amount = $this->calculateTotal();
+            // dd($this->total_amount);
+            // $this->hydrate();
         } else {
             session()->flash('message', 'Please Select Customer!');
         }
-    }
-
-    public function calculateTotal() {
-        return Cart::instance($this->cart_instance)->total() + $this->shipping;
     }
 
     public function resetCart() {

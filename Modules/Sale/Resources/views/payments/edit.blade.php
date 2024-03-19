@@ -69,7 +69,7 @@
                                                 <option {{ $salePayment->payment_method == 'Cash' ? 'selected' : '' }} value="Cash">Cash</option>
                                                 <option {{ $salePayment->payment_method == 'Credit Card' ? 'selected' : '' }} value="Credit Card">Credit Card</option>
                                                 <option {{ $salePayment->payment_method == 'Bank Transfer' ? 'selected' : '' }} value="Bank Transfer">Bank Transfer</option>
-                                                <option {{ $salePayment->payment_method == 'Cheque' ? 'selected' : '' }} value="Cheque">Cheque</option>
+                                                <option {{ $salePayment->payment_method == 'QRIS' ? 'selected' : '' }} value="QRIS">QRIS</option>
                                                 <option {{ $salePayment->payment_method == 'Other' ? 'selected' : '' }} value="Other">Other</option>
                                             </select>
                                         </div>

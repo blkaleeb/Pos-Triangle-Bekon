@@ -1,4 +1,5 @@
-<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -31,14 +32,19 @@
                             <div class="form-row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="total_amount">Total Amount <span class="text-danger">*</span></label>
-                                        <input id="total_amount" type="text" class="form-control" name="total_amount" value="{{ $total_amount }}" readonly required>
+                                        <label for="total_amount">Total Amount <span
+                                                class="text-danger">*</span></label>
+                                        <input wire:model="total_amount" id="total_amount" type="text"
+                                            class="form-control" name="total_amount" readonly required>
+                                        {{ $total_amount }}
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="paid_amount">Received Amount <span class="text-danger">*</span></label>
-                                        <input id="paid_amount" type="text" class="form-control" name="paid_amount" value="{{ $total_amount }}" required>
+                                        <label for="paid_amount">Received Amount <span
+                                                class="text-danger">*</span></label>
+                                        <input id="paid_amount" type="text" class="form-control" name="paid_amount"
+                                            wire:model="total_amount" required>
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +54,7 @@
                                     <option value="Cash">Cash</option>
                                     <option value="Credit Card">Credit Card</option>
                                     <option value="Bank Transfer">Bank Transfer</option>
-                                    <option value="Cheque">Cheque</option>
+                                    <option value="QRIS">QRIS</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
@@ -63,9 +69,9 @@
                                     <tr>
                                         <th>Total Products</th>
                                         <td>
-                                                <span class="badge badge-success">
-                                                    {{ Cart::instance($cart_instance)->count() }}
-                                                </span>
+                                            <span class="badge badge-success">
+                                                {{ Cart::instance($cart_instance)->count() }}
+                                            </span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -84,7 +90,7 @@
                                     <tr class="text-primary">
                                         <th>Grand Total</th>
                                         @php
-                                            $total_with_shipping = Cart::instance($cart_instance)->total() + (float) $shipping
+                                            $total_with_shipping = Cart::instance($cart_instance)->total() + (float) $shipping;
                                         @endphp
                                         <th>
                                             (=) {{ format_currency($total_with_shipping) }}

@@ -17,7 +17,7 @@ class CreateAdjustedProductsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('adjustment_id');
             $table->unsignedBigInteger('product_id');
-            $table->integer('quantity');
+            $table->decimal('quantity',20,3);
             $table->string('type');
             $table->foreign('adjustment_id')->references('id')->on('adjustments')->onDelete('cascade');
             $table->timestamps();

@@ -161,9 +161,10 @@ class ProfitLossReport extends Component
             })
             ->with('saleDetails')->get();
 
+        // dd($sales);
         foreach ($sales as $sale) {
             foreach ($sale->saleDetails as $saleDetail) {
-                $product_costs += $saleDetail->product->product_cost;
+                $product_costs += ($saleDetail->quantity * $saleDetail->product->product_cost);
             }
         }
 
