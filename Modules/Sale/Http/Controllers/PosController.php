@@ -56,7 +56,7 @@ class PosController extends Controller
                 'payment_method' => $request->payment_method,
                 'note' => $request->note,
                 'tax_amount' => Cart::instance('sale')->tax() * 100,
-                'discount_amount' => Cart::instance('sale')->discount() * 100,
+                'discount_amount' => Cart::instance('sale')->discount(),
             ]);
 
             foreach (Cart::instance('sale')->content() as $cart_item) {

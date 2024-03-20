@@ -91,7 +91,7 @@
                                 <td>(+) {{ format_currency(Cart::instance($cart_instance)->tax()) }}</td>
                             </tr>
                             <tr>
-                                <th>Discount ({{ $global_discount }}%)</th>
+                                <th>Discount (Rp)</th>
                                 <td>(-) {{ format_currency(Cart::instance($cart_instance)->discount()) }}</td>
                             </tr>
                             <tr>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
-                        <label for="discount_percentage">Discount (%)</label>
+                        <label for="discount_percentage">Discount (Rp)</label>
                         <input wire:model.blur="global_discount" type="number" class="form-control" min="0"
                             max="100" value="{{ $global_discount }}" required>
                     </div>
