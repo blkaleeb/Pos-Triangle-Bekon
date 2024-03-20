@@ -34,9 +34,8 @@
                                     <div class="form-group">
                                         <label for="total_amount">Total Amount <span
                                                 class="text-danger">*</span></label>
-                                        <input wire:model="total_amount" id="total_amount" type="text"
-                                            class="form-control" name="total_amount" readonly required>
-                                        {{ $total_amount }}
+                                        <input id="total_amount" type="text" class="form-control" name="total_amount"
+                                            wire:model="total_amount" readonly required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -90,7 +89,8 @@
                                     <tr class="text-primary">
                                         <th>Grand Total</th>
                                         @php
-                                            $total_with_shipping = Cart::instance($cart_instance)->total() + (float) $shipping;
+                                            $total_with_shipping =
+                                                Cart::instance($cart_instance)->total() + (float) $shipping;
                                         @endphp
                                         <th>
                                             (=) {{ format_currency($total_with_shipping) }}
