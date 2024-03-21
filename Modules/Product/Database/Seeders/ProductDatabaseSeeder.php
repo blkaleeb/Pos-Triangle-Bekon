@@ -9,25 +9,39 @@ use Modules\Setting\Entities\Unit;
 
 class ProductDatabaseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        Model::unguard();
+  /**
+   * Run the database seeds.
+   *
+   * @return void
+   */
+  public function run()
+  {
+    Model::unguard();
 
-        Category::create([
-            'category_code' => 'CA_01',
-            'category_name' => 'Random'
-        ]);
+    Category::create(
+      [
+        'category_code' => 'CA_01',
+        'category_name' => 'Random'
+      ],
+      [
+        'category_code' => 'FZ',
+        'category_name' => 'Frozen Food'
+      ]
+    );
 
-        Unit::create([
-            'name' => 'Piece',
-            'short_name' => 'PC',
-            'operator' => '*',
-            'operation_value' => 1
-        ]);
-    }
+    Unit::create(
+      [
+        'name' => 'Kilogram',
+        'short_name' => 'Kg',
+        'operator' => '*',
+        'operation_value' => 1
+      ],
+      [
+        'name' => 'Piece',
+        'short_name' => 'PC',
+        'operator' => '*',
+        'operation_value' => 1
+      ]
+    );
+  }
 }
