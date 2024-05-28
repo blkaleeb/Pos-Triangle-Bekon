@@ -38,7 +38,7 @@ class Product extends Model implements HasMedia
     }
 
     public function getProductCostAttribute($value) {
-        return ($value / 100);
+        return ($value );
     }
 
     public function setProductPriceAttribute($value) {
@@ -46,6 +46,6 @@ class Product extends Model implements HasMedia
     }
 
     public function getProductPriceAttribute($value) {
-        return ($value / 100);
+        return ($value );
     }
 }

@@ -21,7 +21,7 @@ class SaleReturnPayment extends Model
     }
 
     public function getAmountAttribute($value) {
-        return $value / 100;
+        return $value ;
     }
 
     public function getDateAttribute($value) {

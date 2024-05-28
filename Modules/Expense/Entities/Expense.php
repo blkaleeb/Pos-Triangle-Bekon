@@ -34,6 +34,6 @@ class Expense extends Model
     }
 
     public function getAmountAttribute($value) {
-        return ($value / 100);
+        return ($value );
     }
 }

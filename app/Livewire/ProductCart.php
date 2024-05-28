@@ -169,7 +169,7 @@ class ProductCart extends Component
 
             $this->updateCartOptions($row_id, $product_id, $cart_item, $discount_amount);
         } elseif ($this->discount_type[$product_id] == 'percentage') {
-            $discount_amount = ($cart_item->price + $cart_item->options->product_discount) * ($this->item_discount[$product_id] / 100);
+            $discount_amount = ($cart_item->price + $cart_item->options->product_discount) * ($this->item_discount[$product_id] );
 
             Cart::instance($this->cart_instance)
                 ->update($row_id, [
@@ -219,14 +219,14 @@ class ProductCart extends Component
         $sub_total = 0;
 
         if ($product['product_tax_type'] == 1) {
-            $price = $product_price + ($product_price * ($product['product_order_tax'] / 100));
+            $price = $product_price + ($product_price * ($product['product_order_tax'] ));
             $unit_price = $product_price;
-            $product_tax = $product_price * ($product['product_order_tax'] / 100);
-            $sub_total = $product_price + ($product_price * ($product['product_order_tax'] / 100));
+            $product_tax = $product_price * ($product['product_order_tax'] );
+            $sub_total = $product_price + ($product_price * ($product['product_order_tax'] ));
         } elseif ($product['product_tax_type'] == 2) {
             $price = $product_price;
-            $unit_price = $product_price - ($product_price * ($product['product_order_tax'] / 100));
-            $product_tax = $product_price * ($product['product_order_tax'] / 100);
+            $unit_price = $product_price - ($product_price * ($product['product_order_tax'] ));
+            $product_tax = $product_price * ($product['product_order_tax'] );
             $sub_total = $product_price;
         } else {
             $price = $product_price;
