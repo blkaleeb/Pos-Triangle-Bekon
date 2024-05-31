@@ -122,7 +122,7 @@
 @endsection
 
 @push('page_scripts')
-    <script src="{{ asset('js/jquery-mask-money.js') }}"></script>
+    {{-- <script src="{{ asset('js/jquery-mask-money.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#paid_amount').maskMoney({
@@ -141,5 +141,11 @@
                 $('#paid_amount').val(paid_amount);
             });
         });
+    </script> --}}
+    <script>
+        window.autoNumericElements = [{
+            id: 'paid_amount',
+            value: null,
+        }];
     </script>
 @endpush

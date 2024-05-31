@@ -22,6 +22,7 @@ class Checkout extends Component
     public $data;
     public $customer_id;
     public $total_amount;
+    public $paid_amount;
 
     public function mount($cartInstance, $customers) {
         $this->cart_instance = $cartInstance;
@@ -34,6 +35,7 @@ class Checkout extends Component
         $this->discount_type = [];
         $this->item_discount = [];
         $this->total_amount = 0;
+        $this->paid_amount = 0;
     }
 
     public function hydrate() {
@@ -58,6 +60,7 @@ class Checkout extends Component
         if ($this->customer_id != null) {
             $this->dispatch('showCheckoutModal');
             $this->total_amount = $this->calculateTotal();
+            $this->paid_amount = $this->calculateTotal();
             // dd($this->total_amount);
             // $this->hydrate();
         } else {
@@ -105,6 +108,7 @@ class Checkout extends Component
         $this->discount_type[$product['id']] = 'fixed';
         $this->item_discount[$product['id']] = 0;
         $this->total_amount = $this->calculateTotal();
+        $this->paid_amount = $this->calculateTotal();
     }
 
     public function removeItem($row_id) {
@@ -144,6 +148,7 @@ class Checkout extends Component
         ]);
 
         $this->total_amount = $this->calculateTotal();
+        $this->paid_amount = $this->calculateTotal();
     }
 
     public function updatedDiscountType($value, $name) {
