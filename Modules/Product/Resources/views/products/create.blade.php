@@ -234,7 +234,7 @@
         }
     </script>
 
-    <script src="{{ asset('js/jquery-mask-money.js') }}"></script>
+    {{-- <script src="{{ asset('js/jquery-mask-money.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#product_cost').maskMoney({
@@ -255,5 +255,9 @@
                 $('#product_price').val(product_price);
             });
         });
+    </script> --}}
+    <script type="module">
+        const myInput = document.getElementById('product_cost');
+        new AutoNumeric(myInput);
     </script>
 @endpush
