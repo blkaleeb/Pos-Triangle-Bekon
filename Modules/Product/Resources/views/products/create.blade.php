@@ -256,8 +256,7 @@
             });
         });
     </script> --}}
-    <script type="module">
-        const myInput = document.getElementById('product_cost');
-        new AutoNumeric(myInput);
+    <script>
+        window.autoNumericElements = ['product_cost', 'product_price'];
     </script>
 @endpush
