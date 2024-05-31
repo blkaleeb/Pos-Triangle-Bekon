@@ -32,19 +32,16 @@ class SuppliersController extends Controller
         $request->validate([
             'supplier_name'  => 'required|string|max:255',
             'supplier_phone' => 'required|max:255',
-            'supplier_email' => 'required|email|max:255',
             'city'           => 'required|string|max:255',
-            'country'        => 'required|string|max:255',
-            'address'        => 'required|string|max:500',
         ]);
 
         Supplier::create([
             'supplier_name'  => $request->supplier_name,
             'supplier_phone' => $request->supplier_phone,
-            'supplier_email' => $request->supplier_email,
+            'supplier_email' => $request->supplier_email ? $request->supplier_email : '-',
             'city'           => $request->city,
-            'country'        => $request->country,
-            'address'        => $request->address
+            'country'        => $request->country ? $request->country : '-',
+            'address'        => $request->address ? $request->address : '-'
         ]);
 
         toast('Supplier Created!', 'success');
@@ -73,19 +70,16 @@ class SuppliersController extends Controller
         $request->validate([
             'supplier_name'  => 'required|string|max:255',
             'supplier_phone' => 'required|max:255',
-            'supplier_email' => 'required|email|max:255',
             'city'           => 'required|string|max:255',
-            'country'        => 'required|string|max:255',
-            'address'        => 'required|string|max:500',
         ]);
 
         $supplier->update([
             'supplier_name'  => $request->supplier_name,
             'supplier_phone' => $request->supplier_phone,
-            'supplier_email' => $request->supplier_email,
+            'supplier_email' => $request->supplier_email ? $request->supplier_email : '-',
             'city'           => $request->city,
-            'country'        => $request->country,
-            'address'        => $request->address
+            'country'        => $request->country ? $request->country : '-',
+            'address'        => $request->address ? $request->address : '-'
         ]);
 
         toast('Supplier Updated!', 'info');

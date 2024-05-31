@@ -34,7 +34,7 @@
                                             value="SL">
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                {{-- <div class="col-lg-4">
                                     <div class="from-group">
                                         <div class="form-group">
                                             <label for="customer_id">Customer <span class="text-danger">*</span></label>
@@ -46,7 +46,8 @@
                                             </select>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
+                                <livewire:people.search-customer />
                                 <div class="col-lg-4">
                                     <div class="from-group">
                                         <div class="form-group">

@@ -240,7 +240,7 @@ class ProductCart extends Component
 
     public function updateCartOptions($row_id, $product_id, $cart_item, $discount_amount) {
         Cart::instance($this->cart_instance)->update($row_id, ['options' => [
-            'sub_total'             => $cart_item->price * $cart_item->qty,
+            'sub_total'             => $cart_item->price * $cart_item->qty - $discount_amount,
             'code'                  => $cart_item->options->code,
             'stock'                 => $cart_item->options->stock,
             'unit'                  => $cart_item->options->unit,
