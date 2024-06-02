@@ -1,4 +1,4 @@
-<div class="col-lg-4">
+<div class="">
     <div class="form-group mb-0">
         <label for="customer_id">Customer <span class="text-danger">*</span></label>
         <div class="input-group">

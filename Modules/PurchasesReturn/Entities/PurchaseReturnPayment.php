@@ -16,10 +16,6 @@ class PurchaseReturnPayment extends Model
         return $this->belongsTo(PurchaseReturn::class, 'purchase_return_id', 'id');
     }
 
-    public function setAmountAttribute($value) {
-        $this->attributes['amount'] = $value * 100;
-    }
-
     public function getAmountAttribute($value) {
         return $value ;
     }

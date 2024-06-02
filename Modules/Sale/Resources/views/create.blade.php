@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                 </div> --}}
-                                <livewire:people.search-customer />
+                                <div class="col-lg-4"><livewire:people.search-customer /></div>
                                 <div class="col-lg-4">
                                     <div class="from-group">
                                         <div class="form-group">
@@ -145,7 +145,7 @@
     <script>
         window.autoNumericElements = [{
             id: 'paid_amount',
-            value: null,
+            value: 0,
         }];
     </script>
 @endpush

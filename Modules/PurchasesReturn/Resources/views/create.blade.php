@@ -33,7 +33,7 @@
                                             value="PRRN">
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                {{-- <div class="col-lg-4">
                                     <div class="from-group">
                                         <div class="form-group">
                                             <label for="supplier_id">Supplier <span class="text-danger">*</span></label>
@@ -45,7 +45,8 @@
                                             </select>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
+                                <livewire:people.search-supplier />
                                 <div class="col-lg-4">
                                     <div class="from-group">
                                         <div class="form-group">
@@ -120,7 +121,7 @@
 @endsection
 
 @push('page_scripts')
-    <script src="{{ asset('js/jquery-mask-money.js') }}"></script>
+    {{-- <script src="{{ asset('js/jquery-mask-money.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#paid_amount').maskMoney({
@@ -139,5 +140,12 @@
                 $('#paid_amount').val(paid_amount);
             });
         });
+    </script> --}}
+
+    <script>
+        window.autoNumericElements = [{
+            id: 'paid_amount',
+            value: 0,
+        }];
     </script>
 @endpush

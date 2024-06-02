@@ -143,6 +143,9 @@
     </script> --}}
 
     <script>
-        window.autoNumericElements = ['paid_amount'];
+        window.autoNumericElements = [{
+            id: 'paid_amount',
+            value: 0,
+        }];
     </script>
 @endpush

@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                 </div> --}}
-                                <livewire:people.search-customer />
+                                <div class="col-lg-4"><livewire:people.search-customer /></div>
                                 <div class="col-lg-4">
                                     <div class="from-group">
                                         <div class="form-group">

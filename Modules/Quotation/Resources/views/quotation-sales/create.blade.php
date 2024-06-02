@@ -34,7 +34,7 @@
                                             value="SL">
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                {{-- <div class="col-lg-4">
                                     <div class="from-group">
                                         <div class="form-group">
                                             <label for="customer_id">Customer <span class="text-danger">*</span></label>
@@ -46,7 +46,8 @@
                                             </select>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
+                                <div class="col-lg-4"><livewire:people.search-customer /></div>
                                 <div class="col-lg-4">
                                     <div class="from-group">
                                         <div class="form-group">
@@ -123,24 +124,10 @@
 @endsection
 
 @push('page_scripts')
-    <script src="{{ asset('js/jquery-mask-money.js') }}"></script>
     <script>
-        $(document).ready(function() {
-            $('#paid_amount').maskMoney({
-                prefix: '{{ settings()->currency->symbol }}',
-                thousands: '{{ settings()->currency->thousand_separator }}',
-                decimal: '{{ settings()->currency->decimal_separator }}',
-                allowZero: true,
-            });
-
-            $('#getTotalAmount').click(function() {
-                $('#paid_amount').maskMoney('mask', {{ Cart::instance('sale')->total() }});
-            });
-
-            $('#sale-form').submit(function() {
-                var paid_amount = $('#paid_amount').maskMoney('unmasked')[0];
-                $('#paid_amount').val(paid_amount);
-            });
-        });
+        window.autoNumericElements = [{
+            id: 'paid_amount',
+            value: 0,
+        }];
     </script>
 @endpush
