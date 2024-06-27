@@ -15,10 +15,17 @@
 
                 <div class="input-group-prepend mb-3">
                     <a href="{{ route('customers.create') }}" class="btn btn-primary">
-                        <i class="bi bi-person-plus"></i> Create Customer
+                        <i class="bi bi-person-plus"></i>
                     </a>
+                    <select wire:model.live="customer_id" id="customer_id" class="form-control">
+                        <option value="" selected>Select Customer</option>
+                        @foreach($customers as $customer)
+                            <option value="{{ $customer->id }}">{{ $customer->customer_name }}</option>
+                        @endforeach
+                    </select>
                 </div>
-                <div class="mb-3"><livewire:people.search-customer /></div>
+
+                {{-- <div class="mb-3"><livewire:people.search-customer /></div> --}}
 
                 <div class="table-responsive">
                     <table class="table">
