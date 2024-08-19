@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         * {
-            font-size: 12px;
+            font-size: 14px;
             line-height: 18px;
             font-family: 'Ubuntu', sans-serif;
         }
         h2 {
-            font-size: 16px;
+            font-size: 24px;
         }
         td,
         th,
@@ -22,7 +22,7 @@
             border-collapse: collapse;
         }
         tr {border-bottom: 1px dashed #ddd;}
-        td,th {padding: 7px 0;width: 50%;}
+        td,th {padding: 2px 0;width: 50%;}
 
         table {width: 100%;}
         tfoot tr th:first-child {text-align: left;}
@@ -31,14 +31,14 @@
             text-align: center;
             align-content: center;
         }
-        small{font-size:11px;}
+        small{font-size:12px;}
 
         @media print {
             * {
-                font-size:12px;
+                font-size:14px;
                 line-height: 20px;
             }
-            td,th {padding: 5px 0;}
+            td,th {padding: 2px 0;}
             .hidden-print {
                 display: none !important;
             }
@@ -54,14 +54,15 @@
 </head>
 <body>
 
-<div style="max-width:400px;margin:0 auto">
+<div style="max-width:500px;margin:0 auto">
     <div id="receipt-data">
         <div class="centered">
-            <h2 style="margin-bottom: 5px">{{ settings()->company_name }}</h2>
+            <h2 style="margin-bottom: 15px">{{ settings()->company_name }}</h2>
 
-            <p style="font-size: 11px;line-height: 15px;margin-top: 0">
-                {{ settings()->company_email }}, {{ settings()->company_phone }}
-                <br>{{ settings()->company_address }}
+            <p style="font-size: 12px;line-height: 15px;margin-top: 0">
+                {{ settings()->company_email }} <br>
+                {{ settings()->company_phone }} <br>
+                {{ settings()->company_address }}
             </p>
         </div>
         <p>
@@ -74,13 +75,12 @@
             @foreach($sale->saleDetails as $saleDetail)
                 <tr>
                     <td colspan="2">
-                        {{ $saleDetail->product->product_name }}
-                        ({{ $saleDetail->quantity }} x {{ format_currency($saleDetail->price) }})
+                        {{ $saleDetail->quantity }} {{ $saleDetail->product->product_name }} <br>
+                        @ {{ format_currency($saleDetail->price) }}
                     </td>
                     <td style="text-align:right;vertical-align:bottom">{{ format_currency($saleDetail->sub_total) }}</td>
                 </tr>
             @endforeach
-
             @if($sale->tax_percentage)
                 <tr>
                     <th colspan="2" style="text-align:left">Tax ({{ $sale->tax_percentage }}%)</th>
@@ -100,7 +100,7 @@
                 </tr>
             @endif
             <tr>
-                <th colspan="2" style="text-align:left">Grand Total</th>
+                <th colspan="2" style="text-align:left;">Grand Total</th>
                 <th style="text-align:right">{{ format_currency($sale->total_amount) }}</th>
             </tr>
             </tbody>
@@ -108,20 +108,20 @@
         <table>
             <tbody>
                 <tr style="background-color:#ddd;">
-                    <td class="centered" style="padding: 5px;">
-                        Paid By: {{ $sale->payment_method }}
+                    <td class="centered" style="padding: 2px;">
+                        Paid By: <br> {{ $sale->payment_method }}
                     </td>
-                    <td class="centered" style="padding: 5px;">
+                    <td class="centered" style="padding: 2px;">
                         Amount: {{ format_currency($sale->paid_amount) }}
                     </td>
                 </tr>
-                <tr style="border-bottom: 0;">
+                {{-- <tr style="border-bottom: 0;">
                     <td class="centered" colspan="3">
                         <div style="margin-top: 10px;">
                             {!! \Milon\Barcode\Facades\DNS1DFacade::getBarcodeSVG($sale->reference, 'C128', 1, 25, 'black', false) !!}
                         </div>
                     </td>
-                </tr>
+                </tr> --}}
             </tbody>
         </table>
     </div>

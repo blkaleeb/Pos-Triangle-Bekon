@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2f8f880313a6caeade7e4887c65685a",
+    "content-hash": "c4e73581e8e95715f0ab9e37b310e6f2",
     "packages": [
         {
             "name": "anayarojo/shoppingcart",
@@ -83,26 +83,26 @@
         },
         {
             "name": "barryvdh/laravel-snappy",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-snappy.git",
-                "reference": "940eec2d99b89cbc9bea2f493cf068382962a485"
+                "reference": "716dcb6db24de4ce8e6ae5941cfab152af337ea0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-snappy/zipball/940eec2d99b89cbc9bea2f493cf068382962a485",
-                "reference": "940eec2d99b89cbc9bea2f493cf068382962a485",
+                "url": "https://api.github.com/repos/barryvdh/laravel-snappy/zipball/716dcb6db24de4ce8e6ae5941cfab152af337ea0",
+                "reference": "716dcb6db24de4ce8e6ae5941cfab152af337ea0",
                 "shasum": ""
             },
             "require": {
-                "illuminate/filesystem": "^9|^10",
-                "illuminate/support": "^9|^10",
-                "knplabs/knp-snappy": "^1.4",
+                "illuminate/filesystem": "^9|^10|^11.0",
+                "illuminate/support": "^9|^10|^11.0",
+                "knplabs/knp-snappy": "^1.4.4",
                 "php": ">=7.2"
             },
             "require-dev": {
-                "orchestra/testbench": "^7|^8"
+                "orchestra/testbench": "^7|^8|^9.0"
             },
             "type": "library",
             "extra": {
@@ -145,7 +145,7 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-snappy/issues",
-                "source": "https://github.com/barryvdh/laravel-snappy/tree/v1.0.2"
+                "source": "https://github.com/barryvdh/laravel-snappy/tree/v1.0.3"
             },
             "funding": [
                 {
@@ -157,7 +157,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-04-07T10:38:54+00:00"
+            "time": "2024-03-09T19:20:39+00:00"
         },
         {
             "name": "brick/math",

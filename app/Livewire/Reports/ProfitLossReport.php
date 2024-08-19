@@ -167,6 +167,12 @@ class ProfitLossReport extends Component
                 $product_costs += ($saleDetail->quantity * $saleDetail->product->product_cost);
             }
         }
+        // foreach ($sales as $sale) {
+        //     foreach ($sale->saleDetails as $saleDetail) {
+        //         $product_costs += $saleDetail->product->product_cost;
+        //         $product_costs += $saleDetail->product->product_cost * $saleDetail->quantity;
+        //     }
+        // }
 
         $profit = $revenue - $product_costs;
 

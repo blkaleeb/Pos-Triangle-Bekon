@@ -1,6 +1,6 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app-d03883be.js",
+    "file": "assets/app-732a5eff.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
@@ -10,7 +10,7 @@
     "src": "resources/js/chart-config.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-296d3b42.css",
+    "file": "assets/app-0e8fe37c.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }
