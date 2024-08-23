@@ -17,10 +17,6 @@ class SalePayment extends Model
         return $this->belongsTo(Sale::class, 'sale_id', 'id');
     }
 
-    public function setAmountAttribute($value) {
-        $this->attributes['amount'] = $value * 100;
-    }
-
     public function getAmountAttribute($value) {
         return $value ;
     }

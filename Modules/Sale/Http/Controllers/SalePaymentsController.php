@@ -35,6 +35,8 @@ class SalePaymentsController extends Controller
     public function store(Request $request) {
         abort_if(Gate::denies('access_sale_payments'), 403);
 
+        // dd($request);
+
         $request->validate([
             'date' => 'required|date',
             'reference' => 'required|string|max:255',
