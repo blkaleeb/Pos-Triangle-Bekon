@@ -21,7 +21,7 @@ class PosController extends Controller
     public function index() {
         Cart::instance('sale')->destroy();
 
-        $customers = Customer::all();
+        $customers = Customer::orderBy('customer_name')->get();
         $product_categories = Category::all();
 
         return view('sale::pos.index', compact('product_categories', 'customers'));
