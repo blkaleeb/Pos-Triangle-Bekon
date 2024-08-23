@@ -64,9 +64,13 @@ class SalePaymentsController extends Controller
                 $payment_status = 'Partial';
             } else {
                 $payment_status = 'Paid';
+                if ($sale->status == 'Shipped') {
+                    $sale->status = 'Completed';
+                }
             }
 
             $sale->update([
+                'status' => $sale->status,
                 'paid_amount' => ($sale->paid_amount + $request->amount),
                 'due_amount' => $due_amount,
                 'payment_status' => $payment_status
@@ -111,9 +115,14 @@ class SalePaymentsController extends Controller
                 $payment_status = 'Partial';
             } else {
                 $payment_status = 'Paid';
+                if ($sale->status == 'Shipped') {
+                    $sale->status = 'Completed';
+                }
             }
 
+
             $sale->update([
+                'status' => $sale->status,
                 'paid_amount' => (($sale->paid_amount - $salePayment->amount) + $request->amount),
                 'due_amount' => $due_amount,
                 'payment_status' => $payment_status

@@ -102,34 +102,19 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-sm-5 ml-md-auto">
-                                <table class="table">
-                                    <tbody>
-                                    <tr>
-                                        <td class="left"><strong>Discount ({{ $sale->discount_percentage }}%)</strong></td>
-                                        <td class="right">{{ format_currency($sale->discount_amount) }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="left"><strong>Tax ({{ $sale->tax_percentage }}%)</strong></td>
-                                        <td class="right">{{ format_currency($sale->tax_amount) }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="left"><strong>Shipping</strong></td>
-                                        <td class="right">{{ format_currency($sale->shipping_amount) }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="left"><strong>Grand Total</strong></td>
-                                        <td class="right"><strong>{{ format_currency($sale->total_amount) }}</strong></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header font-xl font-weight-bold d-flex flex-wrap align-items-center">
+                        Notes:
+                    </div>
+                    <div class="card-body">
+                        {{ $sale->note }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-

@@ -43,7 +43,7 @@
                             </div>
                             <livewire:adjustment.product-table/>
                             <div class="form-group">
-                                <label for="note">Note (If Needed)</label>
+                                <label for="note">Note <span class="text-danger">*</span></label>
                                 <textarea name="note" id="note" rows="5" class="form-control"></textarea>
                             </div>
                             <div class="mt-3">

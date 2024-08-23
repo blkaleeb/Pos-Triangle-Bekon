@@ -35,7 +35,7 @@ class AdjustmentController extends Controller
         $request->validate([
             'reference'   => 'required|string|max:255',
             'date'        => 'required|date',
-            'note'        => 'nullable|string|max:1000',
+            'note'        => 'required|string|max:1000',
             'product_ids' => 'required',
             'quantities'  => 'required',
             'types'       => 'required'
